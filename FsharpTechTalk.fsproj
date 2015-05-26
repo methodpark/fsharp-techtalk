@@ -34,10 +34,11 @@
     <Compile Include="Program.fs" />
     <None Include="DotNetIntegration.fsx" />
     <None Include="Interactive.fsx" />
+    <None Include="Functional.fsx" />
     <None Include="packages.config" />
+    <None Include="PowerfulTypeSystem.fsx" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.1\Framework\v4.0\Microsoft.FSharp.Targets" />
   <ItemGroup>
-    <None Include="Functional.fsx" />
   </ItemGroup>
 </Project>

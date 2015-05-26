@@ -1,20 +1,21 @@
 ﻿
-// Direct use of your beloved .NET libraries
+// Easy use of the core .Net lib
 open System
-Console.WriteLine "Hello World"
+Console.WriteLine "Hello World" // <-- See?? No stupid ; and no ()
 
+// Easy use of your beloved .NET libraries
 #r "/home/b6n/dev/FsharpTechTalk/packages/Newtonsoft.Json.6.0.8/lib/net40/Newtonsoft.Json.dll"
+
+open Newtonsoft.Json
 
 type Thingy = {
     Name : string;
     Skill : int32
 }
 
-open Newtonsoft.Json
-
 let t = {Name = "Dat thing"; Skill = 99}
 
-JsonConvert.SerializeObject t
+let s = JsonConvert.SerializeObject t
 
 
 // nicer printing with compiler support!
