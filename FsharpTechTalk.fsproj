@@ -44,11 +44,11 @@
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
     <None Include="DotNetIntegration.fsx" />
-    <None Include="Interactive.fsx" />
     <None Include="Functional.fsx" />
     <None Include="packages.config" />
     <None Include="PowerfulTypeSystem.fsx" />
     <Compile Include="Testing.fs" />
+    <None Include="Interactive.fsx" />
     <Compile Include="Program.fs" />
     <None Include="OcerNiceStuff.fsx" />
     <None Include="resources\schema.json" />

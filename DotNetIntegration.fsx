@@ -21,3 +21,29 @@ let s = JsonConvert.SerializeObject t
 // nicer printing with compiler support!
 printfn "Hello World %A" [ 1; 2; 3 ]
 //printfn "Hello World %d" "1 2 3"
+
+
+open System.Net
+
+let fetch (u: string) = 
+    use client = new WebClient()
+    client.DownloadString(u)
+
+fetch "http://google.com"
+
+let fetchAsync u =
+    async {
+        return fetch u
+    }
+
+let a = fetchAsync "http://google.com"
+
+let urls = ["http://google.com"; "http://yahoo.com"; "http://bing.com"]
+let rs = urls
+            |> List.map fetchAsync
+            |> Async.Parallel
+            |> Async.RunSynchronously
+            |> Array.toList
+            |> List.map (fun s -> s.Length)
+let m = (Seq.max rs) 
+List.zip urls (rs |> List.map (fun u -> (float(u)/(float(m)/100.))))
