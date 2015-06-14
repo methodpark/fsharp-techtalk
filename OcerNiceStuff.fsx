@@ -1,5 +1,6 @@
-﻿
+﻿// ------------------------------------------------------
 // unit of measure
+// ------------------------------------------------------
 // https://msdn.microsoft.com/en-us/library/dd233243.aspx
 
 [<Measure>]
@@ -18,8 +19,9 @@ type euro
 [<Measure>]
 type cent
 
-
+// ------------------------------------------------------
 // type provider
+// ------------------------------------------------------
 
 #r "packages/FSharp.Data.2.2.2/lib/net40/FSharp.Data.dll"
 
@@ -49,3 +51,5 @@ wb.Countries.Chad.Indicators.``Cause of death, by communicable diseases and mate
 [wb.Countries.Albania; wb.Countries.Lithuania; wb.Countries.Haiti]
 |> List.map (fun c -> c.CapitalCity)
 
+
+// weitere Type Provider: SQL, XML, Configuration, Registry, ...
