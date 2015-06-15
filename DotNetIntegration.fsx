@@ -3,6 +3,23 @@ open System
 
 Console.WriteLine "Hello World" // <-- See?? No stupid ; and no ()
 
+// Interfaces, classes, everything is there. 
+
+type SomeInterface =
+    abstract member Foo : unit -> unit
+
+type SomeClass () =
+    interface SomeInterface with
+        member x.Foo () = printfn "Foo"
+
+    interface System.IDisposable with
+        member x.Dispose () = ()
+
+let c = new SomeClass()
+(c :> SomeInterface).Foo()
+
+// -----------------------------------------------------------------------
+
 // Easy use of your beloved .NET libraries
 #r "packages/Newtonsoft.Json.6.0.8/lib/net40/Newtonsoft.Json.dll"
 
@@ -21,6 +38,8 @@ let s = JsonConvert.SerializeObject t
 // nicer printing with compiler support!
 printfn "Hello World %A" [ 1; 2; 3 ]
 //printfn "Hello World %d" "1 2 3"
+
+
 
 
 open System.Net
