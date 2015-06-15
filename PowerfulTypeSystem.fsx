@@ -10,7 +10,7 @@ type MailAddress =
     | MailAddress of string
 
 let createMail (s : string) = 
-    if System.Text.RegularExpressions.Regex.IsMatch(s, @"^\S+@\S+\.\S+$") then Some(MailAddress s)
+    if System.Text.RegularExpressions.Regex.IsMatch(s, @"^\S+@\S+\.\S+$") then Some(MailAddress(s.ToLowerInvariant()))
     else None
 
 type SafeUser = 
@@ -21,8 +21,18 @@ let createUser (email, age) =
     let mail = createMail email
     match mail with
     | Some m -> 
-        Some { Email = m;
+        Some { Email = m
                Age = age }
     | None -> None
 
-createUser("mail", 12)
+let mail = "bkn@methodpark.de"
+
+createUser ("mail", 12)
+
+let me = createUser (mail, 32)
+
+me.Value.Email = (createMail mail).Value
+
+// for further information see: 
+// http://fsharpforfunandprofit.com/ddd/
+// http://fsharpforfunandprofit.com/series/designing-with-types.html

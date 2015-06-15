@@ -20,8 +20,17 @@ new FileInfo(@"\n")
 
 // and many more cool things:
 // http://fsharpforfunandprofit.com/
+// Testing: https://fscheck.github.io/FsCheck/ 
 // Enterprise: http://fsharp.org/guides/enterprise/
 // Data Science: http://fsharp.org/guides/data-science/
 // Machine Learning: http://fsharp.org/guides/machine-learning/
 // Mobile apps and Games: http://fsharp.org/guides/apps-and-games/
 // ...
+
+(* What can feel odd:
+- Syntax, in case you're not used to ML:
+    Is it ( or {, is it = or :, is it ',' or ';', ...
+- Module System has its oddities
+- Manual build order of files
+- No modules in folders, unlike C# or Java
+*) 
