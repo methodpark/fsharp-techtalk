@@ -13,7 +13,7 @@ type SomeClass() =
         member x.Foo() = printfn "Foo"
     
     interface System.IDisposable with
-        member x.Dispose() = ()
+        member x.Dispose() = printfn "CU!"
 do
     use c = new SomeClass()
     (c :> SomeInterface).Foo()
