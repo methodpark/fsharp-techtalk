@@ -14,10 +14,10 @@ type SomeClass() =
     
     interface System.IDisposable with
         member x.Dispose() = ()
+do
+    use c = new SomeClass()
+    (c :> SomeInterface).Foo()
 
-let c = new SomeClass()
-
-(c :> SomeInterface).Foo()
 
 // -----------------------------------------------------------------------
 // Easy use of your beloved .NET libraries
