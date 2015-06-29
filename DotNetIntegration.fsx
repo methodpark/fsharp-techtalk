@@ -1,4 +1,7 @@
-﻿// Easy use of the core .Net lib
+﻿
+
+
+// Easy use of the core .Net lib
 open System
 
 Console.WriteLine "Hello World" // <-- See?? No stupid ; and no ()
