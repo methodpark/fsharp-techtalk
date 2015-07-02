@@ -2,9 +2,16 @@
     { Email : string
       Age : int32 }
 
+
+// Nothing keeps me from doing this:
 let u = 
     { Email = "foo@bar"
       Age = -1 }
+
+
+
+
+
 
 type MailAddress = 
     | MailAddress of string
@@ -36,3 +43,4 @@ me.Value.Email = (createMail mail).Value
 // for further information see: 
 // http://fsharpforfunandprofit.com/ddd/
 // http://fsharpforfunandprofit.com/series/designing-with-types.html
+// https://vimeo.com/album/3452190/video/131196782
