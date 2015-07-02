@@ -12,6 +12,9 @@ open CsharpLib
 let o = SomeCsharpClass (Name = "John Doe")
 o
 
+// Some other interesting usages can be found here:
+// http://fsharpforfunandprofit.com/posts/low-risk-ways-to-use-fsharp-at-work/
+
 // probe the std lib:
 // what do these calls do?
 open System.IO
