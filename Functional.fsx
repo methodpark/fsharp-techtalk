@@ -28,6 +28,22 @@ let f = upperCase >> noSpaces
 f "Nathan Drake"
 
 // pattern matching!!!
+let isOldEnough (user: Person) =
+    match user with
+    | {Age = age} when age >= 18 -> true
+    | {Name = name} when name = "Admin" -> true
+    | _ -> false
+
+isOldEnough {Name = "Jimmy"; Age = 21}   
+isOldEnough {Name = "Admin"; Age = 5}
+
+match [|0.4; 0.5; 1.|] with
+| [|_; _; 2.0|] -> "Foo"
+// patterns must be exhaustive
+| [|a; _; c|] -> a.ToString() + c.ToString()
+// | _ -> "Error"
+
+
 type FB = 
     | Fizz
     | Buzz
