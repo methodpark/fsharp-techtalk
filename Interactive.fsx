@@ -2,7 +2,20 @@
 // Yah, you saw it all the way... ;-)
 
 // So, why learn F#?
-// If only to use it to explore the std .NET lib when in Visual Studio:
+
+// Gives you a handy calculator directly in Visual Studio:
+(42. * 3.) / 6.5
+
+// even a typesafe calculator
+[<Measure>] type degC
+[<Measure>] type degF
+
+let convertDegCToF c = 
+    c * 1.8<degF/degC> + 32.0<degF>
+
+convertDegCToF 32.<degC>
+
+// Use it to explore the std .NET lib when in Visual Studio:
 
 // play around with your own stuff:
 #r "CsharpLib/bin/Debug/CsharpLib.dll"
