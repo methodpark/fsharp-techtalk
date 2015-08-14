@@ -7,9 +7,9 @@ let m =
     { Name = "John"
       Age = 67 }
 
-(// Free (like in free beer) equality!!1!elf
+// Free (like in free beer) equality!!1!elf
  m = { Name = "John"
-       Age = 67 })
+       Age = 67 }
 (m = { Name = "Jane"
        Age = 67 })
 
@@ -41,7 +41,7 @@ match [|0.4; 0.5; 1.|] with
 | [|_; _; 2.0|] -> "Foo"
 // patterns must be exhaustive
 | [|a; _; c|] -> a.ToString() + c.ToString()
-// | _ -> "Error"
+| _ -> "Error"
 
 
 type FB = 
